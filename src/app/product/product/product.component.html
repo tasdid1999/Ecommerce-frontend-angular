@@ -1,0 +1,33 @@
+
+<div class = "container">
+    <div class="row">
+      
+        <div class="col-4"  *ngFor = "let product of products">
+            <div class="card shadow bg-white rounded" style="height:320px;width: 250px;">
+                <img class="card-img-top" style = "max-height: 170px;max-width: 250px;"[src] ="imageBaseUrl + product.imageUrl" alt="Card image cap">
+                <div class="card-body">
+        
+                  <small>{{product.name}}</small><br>
+                  <span class = "text-danger">BDT : {{product.price}} TK</span><br>
+                  <small class = "text-secondary">{{product.amount}} items available</small>
+                  <a routerLink = "product-details/{{product.id}}"class="btn-clr text-white d-flex align-item-center mt-1">
+                    <div class="container text-center mt-1">
+                        view
+                    </div>
+                  </a>
+                </div>
+              </div>
+        </div>
+    </div>  
+    <div class="d-flex row-flex justify-content-center">
+      <div  *ngIf = "page > 1">
+        <button (click) ="GoPrevPage()" class = "btn btn-dark">prev</button>
+      </div>
+      <div style = "margin-left: 10px;"*ngIf = "totalNumberOfPage > page">
+        <button (click)="GoNextPage()" class = "btn btn-dark">next</button>
+      </div>
+      
+    </div>
+    
+ </div>
+ 

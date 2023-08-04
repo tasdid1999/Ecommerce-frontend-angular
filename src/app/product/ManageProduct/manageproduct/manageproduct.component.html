@@ -1,0 +1,32 @@
+<div class="container">
+    <table class="table">
+       <thead class = "bg-dark text-white">
+          <th class = "px-2 py-3">product Name</th>
+          <th class = "py-3">product Amount</th>
+          <th class = "py-3">product price</th>
+          <th class = "py-3">Image</th>
+          <th></th>
+       </thead>
+       <tbody>
+          <tr *ngFor = "let product of products">
+           
+            <td>{{product.name}}</td>
+            <td>{{product.amount}}</td>
+            <td>{{product.price}} Tk</td>
+            <td><img [src] = "imageBaseUrl + product.imageUrl" style = "height: 60px;width: 60px;"></td>
+            <td>
+                <fa-icon (click) = "deleteProduct(product.id)" [icon] = "trashIcon" style="color: red; font-size: 20px; padding-top: 20px;" ></fa-icon>
+            </td>
+          </tr>
+       </tbody>
+    </table>
+</div>
+<div class="d-flex row-flex justify-content-center">
+   <div  *ngIf = "page > 1">
+     <button (click) ="GoPrevPage()" class = "btn btn-dark">prev</button>
+   </div>
+   <div style = "margin-left: 10px;"*ngIf = "totalNumberOfPage > page">
+     <button (click)="GoNextPage()" class = "btn btn-dark">next</button>
+   </div>
+   
+ </div>

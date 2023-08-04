@@ -1,0 +1,9 @@
+.btn-clr
+{
+    background-color: rgb(26, 87, 199);
+    text-decoration: none;
+    border-color:  rgb(26, 87, 199);
+    color: aliceblue;
+    padding: 5px;
+    border-radius: 5%;
+}

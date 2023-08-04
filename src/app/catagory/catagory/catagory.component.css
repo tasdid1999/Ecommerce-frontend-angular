@@ -1,0 +1,12 @@
+.activeLink
+{
+     background-color: blue;
+     color: rgb(219, 0, 0);
+     
+}
+.inactiveLink
+{
+    
+    background-color: while;
+    color: black;
+}

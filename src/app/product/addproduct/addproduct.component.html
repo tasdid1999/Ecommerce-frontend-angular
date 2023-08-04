@@ -1,0 +1,65 @@
+
+<app-nav></app-nav>
+
+<div class="container w-50 border my-5" >
+ 
+    <form [formGroup] = "frm" (ngSubmit) = "addProduct()">
+     <div class = "row">
+        <div class="col-4">
+          <div class="form-group m-2">
+            <label for = "name"><b>Product Name </b></label>
+            <input type="text" class="form-control mt-2" formControlName = "name" name = "Name" id = "Name" placeholder="Enter product name ">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group m-2">
+            <label for = "price"><b>Product Price </b></label>
+            <input type="number" class="form-control mt-2" formControlName = "price" name = "price" id = "prcie" placeholder="Enter product price ">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group m-2">
+            <label for = "amount"><b>Product Amount</b> </label>
+            <input type="number" class="form-control mt-2" formControlName = "amount" name = "amount" id = "amount" placeholder="Enter product amount ">
+          </div>
+        </div>
+     </div>
+     <div class="row">
+      <div class="col-4">
+        <div class="form-group m-2">
+          <label for = "productDetails" ><b>Product Details </b></label>
+          <input type="text" class="form-control m-2" formControlName = "productDetails" name = "details" id = "productDetails" placeholder="Enter product details ">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-group m-2">
+          <label for = "productcatagory" class = "mt-2"><b>Product Catagory</b></label><br>
+          <select class = "form-control " name = "productcatagory"formControlName = "catagoryId" >
+            <option *ngFor = "let catagory of catagories" [value] = "catagory.id">{{catagory.name}}</option>
+          </select>
+          
+        </div>
+       
+      </div>
+      <div class="col-4">
+        <div class="col-12">
+          <div class="form-group m-2">
+            <label for = "ProductImage" class = "mt-2"><b>Product Image</b></label><br>
+            <input type="file" (change) = "onChange($event)" class="form-control-file mt-2" name = "ProductImage" id = "ProductImage">
+          </div>
+        </div>
+      </div>
+     </div>
+     
+      <div class="row m-3">
+        <div class="col-4">
+
+        </div>
+        <div class="col-8">
+          <button type = "submit" class = "btn btn-primary mt-3">add product</button>
+        </div>
+        </div>
+       
+      
+    </form>
+</div>

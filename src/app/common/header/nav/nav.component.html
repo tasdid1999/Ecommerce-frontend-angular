@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg nav-clr shadow-sm p-1 mb-2">
+
+        <a class="navbar-brand justify-content-end align-items-center border p-1 mx-2" href="#">
+          <span class = "logo-left"><b>LIFE</b></span><span class = "logo-right"><b>SHOP</b></span>
+      </a>
+     
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link text-light" href="#">Home</a>
+          </li>
+          <li class="nav-item"  *ngIf = "role == 'Admin'" >
+            <a class="nav-link text-light" routerLink = "/add-product">Add Product</a>
+          </li>
+          <li class="nav-item"  *ngIf = "role == 'Admin'">
+              <a class="nav-link text-light" routerLink = "/manage-product">Manage Product</a>
+            </li>
+         
+        </ul>
+      </div>
+           <a class = "text-light m-2 txt-dec" routerLink = "/signin" >Log in</a>
+           <a class = "text-light m-3 txt-dec" routerLink = "/signup">Register</a>
+          <img class = "mt-1"src = "assets/image/cart.png" style="height: 30px; width: 30px;">
+          <span class = "text-light m-2" *ngIf = "item > 0">({{item}})</span>
+   
+  </nav>
